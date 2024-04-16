@@ -17,11 +17,15 @@ body {
   padding: 54px 200px 0px 107px;
 }
 
-.countdown-ready {
+.countdown-ready-contents {
   display: flex;
   margin-top: 19px;
-  gap: 60px;
+  gap: 25px;
   height: 10.6875rem;
+}
+
+.countdown-ready {
+  width: 550px;
 }
 
 .timer {

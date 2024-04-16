@@ -1,35 +1,29 @@
-const button = document.getElementById("button");
-const days = document.getElementById("days");
-const hours = document.getElementById("hours");
-const minutes = document.getElementById("minutes");
-const seconds = document.getElementById("seconds");
+const buttonEl = document.getElementById("button");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
-function startTimer(duration, display) {
-  let timer = duration,
-    days,
-    hours,
-    minutes,
-    seconds;
-  const newDate = "25 abr 2024";
+const newDate = "18 April 2024";
+
+function startTimer() {
+  const fixedDay = new Date(newDate);
+  const currentDate = new Date();
   setInterval(function () {
-    const fixedDay = new Date(newDate);
-    const currentDate = new Date();
-
     const totalSeconds = (fixedDay - currentDate) / 1000;
-
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const mins = Math.floor(totalSeconds / 60) % 60;
     const second = Math.floor(totalSeconds) % 60;
-  });
 
-  days.innerHTML = days;
-  hours.innerHTML = hours;
-  minutes.innerHTML = minutes;
-  seconds.innerHTML = seconds;
+    daysEl.innerHTML = formatTime(days);
+    hoursEl.innerHTML = formatTime(hours);
+    minutesEl.innerHTML = formatTime(mins);
+    secondsEl.innerHTML = formatTime(second);
+  });
 }
 function formatTime(time) {
   return time < 10 ? `0${time}` : time;
 }
 
-startTimer();
+startTimer(startTimer, 1000);
