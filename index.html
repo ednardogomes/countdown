@@ -26,35 +26,35 @@
             <div class="countdown-ready-contents">
               <div class="timer days">
                 <span>Dias</span>
-                <p class="text" id="days">0</p>
+                <p id="days" class="text"></p>
               </div>
 
               <p class="separator">:</p>
 
               <div class="timer hours">
                 <span>horas</span>
-                <p class="text" id="hours">0</p>
+                <p id="hours" class="text"></p>
               </div>
 
               <p class="separator">:</p>
 
               <div class="timer minutes">
                 <span>minutos</span>
-                <p class="text" id="minutes">0</p>
+                <p id="minutes" class="text"></p>
               </div>
 
               <p class="separator">:</p>
 
               <div class="timer seconds">
                 <span>segundos</span>
-                <p class="text" id="seconds">0</p>
+                <p id="seconds" class="text"></p>
               </div>
             </div>
           </div>
           <footer>
             <span>Inscreva-se para saber mais sobre o lançamento</span>
 
-            <div class="button" id="button">Inscreva-se</div>
+            <div id="open-modal" class="button open-modal">Inscreva-se</div>
           </footer>
         </div>
 
@@ -65,6 +65,25 @@
 
       <div class="bottom-image">
         <img src="./images/bottom-image.jpg" alt="" />
+      </div>
+
+      <div class="registration-modal">
+        <div id="fade" class="hide"></div>
+        <form id="form-modal" class="form-modal-container hide" action="">
+          <h2>Preencha os campos abaixo.!</h2>
+          <div>
+            <label for="name">Nome completo:</label>
+            <input id="name" type="name" placeholder="Nome completo" />
+          </div>
+          <div>
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" placeholder="digite seu email" />
+          </div>
+          <div class="button-modal-container">
+            <button class="button btn-modal" type="submit">Enviar</button>
+            <button id="close-modal" class="button btn-modal">Fechar</button>
+          </div>
+        </form>
       </div>
     </main>
   </body>

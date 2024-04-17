@@ -2,8 +2,12 @@ const daysE = document.getElementById("days");
 const hoursE = document.getElementById("hours");
 const minutesE = document.getElementById("minutes");
 const secondsE = document.getElementById("seconds");
+const openModalButton = document.getElementById("open-modal");
+const closeModalButton = document.getElementById("close-modal");
+const modal = document.getElementById("form-modal");
+const fade = document.getElementById("fade");
 
-const fixedDate = "18 April 2024";
+const fixedDate = "18 April 2024 15:00:00";
 
 function cowntdown() {
   setInterval(() => {
@@ -25,5 +29,14 @@ function cowntdown() {
 function formatTimer(timer) {
   return timer < 10 ? `0${timer}` : timer;
 }
+
+const toggleModal = () => {
+  modal.classList.toggle("hide");
+  fade.classList.toggle("hide");
+};
+
+[openModalButton, closeModalButton, fade].forEach((el) => {
+  el.addEventListener("click", () => toggleModal());
+});
 
 cowntdown();
